@@ -20,3 +20,10 @@ Route::view('/reset-password', 'auth.reset')->name('reset-password');
 
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Admin
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+
+    Route::get('/dashboard', [App\Http\Controllers\Admin\DasboardController::class, 'dashboard'])->name('dashboard');
+
+});
