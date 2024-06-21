@@ -2,11 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-Route::get('/', function () {
-    return view('layouts.app');
+Route::get('/clear', function () {
+    \Artisan::call('config:clear');
+    \Artisan::call('cache:clear');
+    \Artisan::call('route:clear');
+    \Artisan::call('config:cache');
+    \Artisan::call('config:clear');
+    \Artisan::call('view:cache');
+    \Artisan::call('view:clear');
+    return 'FINISHED';
 });
 
 Auth::routes();
+Auth::routes(["register" => false]);
+Route::view('/forgot-password', 'auth.forgot')->name('forgot-password');
+Route::view('/reset-password', 'auth.reset')->name('reset-password');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
