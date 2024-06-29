@@ -16,9 +16,9 @@ class Order extends Model
     ];
 
     // Relación con `User`
-    public function user()
+    public function client()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Client::class);
     }
 
     // Relación con `OrderItem`

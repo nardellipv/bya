@@ -29,7 +29,7 @@
                     </div>
                     <div class="">
                         <p class="mb-1 fs-6 fw-bold">Monthly</p>
-                        <h2 class="mb-0">65,127</h2>
+                        <h2 class="mb-0">165,127</h2>
                         <p class="mb-0"><span class="text-success me-2 fw-medium">16.5%</span><span>55.21 USD</span></p>
                     </div>
                 </div>

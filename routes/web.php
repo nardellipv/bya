@@ -26,4 +26,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::get('/dashboard', [App\Http\Controllers\Admin\DasboardController::class, 'dashboard'])->name('dashboard');
 
+    Route::get('/usuarios', [App\Http\Controllers\Admin\UserController::class, 'listUser'])->name('list.user');
+    Route::get('/usuario/editar/{id}', [App\Http\Controllers\Admin\UserController::class, 'editUser'])->name('edit.user');
+    Route::post('/usuario/actualizar/{id}', [App\Http\Controllers\Admin\UserController::class, 'updateUser'])->name('update.user');
+    Route::get('/usuario/eliminar/{id}', [App\Http\Controllers\Admin\UserController::class, 'deleteUser'])->name('delete.user');
+    Route::get('/usuario/agregar', [App\Http\Controllers\Admin\UserController::class, 'addUser'])->name('add.user');
+    Route::post('/usuario/agregar-nuevo-usuario', [App\Http\Controllers\Admin\UserController::class, 'storeUser'])->name('store.user');
+
 });
